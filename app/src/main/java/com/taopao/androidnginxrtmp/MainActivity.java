@@ -5,18 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.taopao.androidnginxrtmp.nginx.Nginx;
+import org.screenshare.rtmp.nginx.Nginx;
 
 public class MainActivity extends AppCompatActivity {
-    // Used to load the 'native-lib' library on application startup.
-//    static {
-//        System.loadLibrary("native-lib");
-//    }
-
     /**
      * Nginx instance.
      */
     private Nginx mNginx;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,21 +23,13 @@ public class MainActivity extends AppCompatActivity {
 
         tv.setText("sadsdsada");
         mNginx = Nginx.create();
-//        tv.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mNginx.start();
-//            }
-//        });
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mNginx.start();
+            }
+        });
 
-        TestJNI testJNI = new TestJNI();
-
-        tv.setText(testJNI.stringFromJNI());
     }
 
-//    /**
-//     * A native method that is implemented by the 'native-lib' native library,
-//     * which is packaged with this application.
-//     */
-//    public native String stringFromJNI();
 }

@@ -14,12 +14,6 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-
-        ndk {
-            moduleName "MyJni"
-            abiFilters 'armeabi', 'x86', 'armeabi-v7a'
-        }
-
     }
 
     buildTypes {
@@ -35,12 +29,21 @@ android {
 //            path 'src/main/jni/Android.mk'	//这个是Android.mk文件的路径
 //        }
 //    }
-
-    sourceSets {
-        main {
-            jni.srcDirs = [] //不使用gradle编译本地c/c++代码
-            jniLibs.srcDirs = ['libs', 'src/main/libs']//加载so库 lib是第三方so src/main/libs是准备生成的so库位置
+    externalNativeBuild {
+        ndkBuild {
+            path 'src/main/jni/Android.mk'
         }
+    }
+//    sourceSets {
+//        main {
+//            jni.srcDirs = [] //不使用gradle编译本地c/c++代码
+//            jniLibs.srcDirs = ['libs', 'src/main/libs']//加载so库 lib是第三方so src/main/libs是准备生成的so库位置
+//        }
+//    }
+    //Add the following configuration
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
     }
 }
 

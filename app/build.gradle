@@ -9,16 +9,15 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        externalNativeBuild {
-            cmake {
-                cppFlags ""
-                abiFilters 'armeabi-v7a'
-            }
-        }
-        ndk {
-            moduleName "nginx"
-
-        }
+//        externalNativeBuild {
+//            cmake {
+//                cppFlags ""
+//                abiFilters 'armeabi-v7a'
+//            }
+//        }
+//        ndk {
+//            moduleName "nginx"
+//        }
     }
     buildTypes {
         release {
@@ -26,19 +25,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    externalNativeBuild {
-        cmake {
-            path "CMakeLists.txt"
-        }
+    sourceSets.main {
+        jniLibs.srcDir "src/main/libs"
+        jni.srcDirs = []
     }
-    sourceSets {
-        main {
-            jni.srcDirs = [] //不使用gradle编译本地c/c++代码
-            jniLibs.srcDirs = ['libs', 'src/main/jniLibs']//加载so库 lib是第三方so src/main/libs是准备生成的so库位置
-        }
+//Add the following configuration
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
     }
-
-
 }
 
 dependencies {

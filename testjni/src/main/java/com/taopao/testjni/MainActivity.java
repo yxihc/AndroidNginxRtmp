@@ -2,6 +2,7 @@ package com.taopao.testjni;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,6 +11,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        JNIMes jniMes = new JNIMes();
+        MyJni myJni = new MyJni();
+        String s = myJni.hello_FromC();
+        Toast.makeText(MainActivity.this, ""+s, Toast.LENGTH_SHORT).show();
+
     }
 }
