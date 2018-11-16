@@ -4,7 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidNginxRtmp.iml" filepath="$PROJECT_DIR$/AndroidNginxRtmp.iml" />
       <module fileurl="file://$PROJECT_DIR$/android_rmtp_nginx-master/android_rmtp_nginx-master.iml" filepath="$PROJECT_DIR$/android_rmtp_nginx-master/android_rmtp_nginx-master.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidnginxlib/androidnginxlib.iml" filepath="$PROJECT_DIR$/androidnginxlib/androidnginxlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simple/simple.iml" filepath="$PROJECT_DIR$/simple/simple.iml" />
       <module fileurl="file://$PROJECT_DIR$/testjni/testjni.iml" filepath="$PROJECT_DIR$/testjni/testjni.iml" />
     </modules>
   </component>
